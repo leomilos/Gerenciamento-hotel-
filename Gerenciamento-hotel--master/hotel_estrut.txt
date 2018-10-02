@@ -1,0 +1,20 @@
+login/cadastro->
+-alterar reserva
+-adicionar reserva
+-excluir reserva
+
+cadastrar:
+
+-cadastro(Registro: les e busca/remove binaria)
+
+
+servicos:
+
+-reservas: quarto, restaurante, sauna, massagem (fila)
+
+-pilhas de roupas, pilhas de registros no cadastro (pilha)
+
+
+eventos:
+
+-times de esportes (ldde ou lde)
