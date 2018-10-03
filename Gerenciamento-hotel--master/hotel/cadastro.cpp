@@ -1,6 +1,7 @@
 #include "cadastro.h"
 #include "ui_cadastro.h"
 #include "escrever.h"
+#include"mainwindow.h"
 #include <iostream>
 escreve arquivo;
 
@@ -28,4 +29,11 @@ void cadastro::on_pushButton_clicked()
    arquivo.add(a);
    a=ui->Idade->text();
    arquivo.add(a);
+   ui->Nome->clear();
+   ui->Sexo->clear();
+   ui->Cpf->clear();
+   ui->Sobrenome->clear();
+   ui->Idade->clear();
+   close();
+
 }

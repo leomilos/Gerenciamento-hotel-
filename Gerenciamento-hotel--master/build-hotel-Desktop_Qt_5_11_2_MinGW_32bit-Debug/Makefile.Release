@@ -1098,7 +1098,10 @@ release/mainwindow.o: ../hotel/mainwindow.cpp ../hotel/mainwindow.h \
 		C:/Qt/5.11.2/mingw53_32/include/QtWidgets/qstatusbar.h \
 		C:/Qt/5.11.2/mingw53_32/include/QtWidgets/QToolBar \
 		C:/Qt/5.11.2/mingw53_32/include/QtWidgets/qtoolbar.h \
-		C:/Qt/5.11.2/mingw53_32/include/QtWidgets/QWidget
+		C:/Qt/5.11.2/mingw53_32/include/QtWidgets/QWidget \
+		../hotel/escrever.h \
+		C:/Qt/5.11.2/mingw53_32/include/QtCore/QString \
+		../hotel/cadastro.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\hotel\mainwindow.cpp
 
 release/logado.o: ../hotel/logado.cpp ../hotel/logado.h \
