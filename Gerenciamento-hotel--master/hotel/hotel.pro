@@ -38,8 +38,7 @@ HEADERS += \
     cadastro.h \
     quartos.h \
     reserva.h \
-    eventos.h \
-    escrever.h
+    eventos.h
 
 FORMS += \
         mainwindow.ui \
