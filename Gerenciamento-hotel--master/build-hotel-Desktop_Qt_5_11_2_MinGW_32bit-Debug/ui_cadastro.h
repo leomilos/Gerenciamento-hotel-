@@ -26,13 +26,13 @@ class Ui_cadastro
 public:
     QWidget *centralwidget;
     QLineEdit *Nome;
-    QLineEdit *Sobrenome;
+    QLineEdit *Senha;
     QLineEdit *Idade;
     QLineEdit *Sexo;
     QLineEdit *Cpf;
     QLabel *label;
     QLabel *label_2;
-    QLabel *label_3;
+    QLabel *senha_2;
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
@@ -51,9 +51,9 @@ public:
         Nome = new QLineEdit(centralwidget);
         Nome->setObjectName(QStringLiteral("Nome"));
         Nome->setGeometry(QRect(60, 50, 113, 20));
-        Sobrenome = new QLineEdit(centralwidget);
-        Sobrenome->setObjectName(QStringLiteral("Sobrenome"));
-        Sobrenome->setGeometry(QRect(90, 80, 113, 20));
+        Senha = new QLineEdit(centralwidget);
+        Senha->setObjectName(QStringLiteral("Senha"));
+        Senha->setGeometry(QRect(60, 80, 113, 20));
         Idade = new QLineEdit(centralwidget);
         Idade->setObjectName(QStringLiteral("Idade"));
         Idade->setGeometry(QRect(60, 110, 113, 20));
@@ -69,9 +69,9 @@ public:
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(20, 60, 47, 13));
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(20, 80, 61, 16));
+        senha_2 = new QLabel(centralwidget);
+        senha_2->setObjectName(QStringLiteral("senha_2"));
+        senha_2->setGeometry(QRect(20, 80, 61, 16));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(20, 110, 47, 13));
@@ -90,7 +90,7 @@ public:
         cadastro->setCentralWidget(centralwidget);
         menubar = new QMenuBar(cadastro);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 234, 26));
+        menubar->setGeometry(QRect(0, 0, 234, 21));
         cadastro->setMenuBar(menubar);
         statusbar = new QStatusBar(cadastro);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -104,9 +104,10 @@ public:
     void retranslateUi(QMainWindow *cadastro)
     {
         cadastro->setWindowTitle(QApplication::translate("cadastro", "MainWindow", nullptr));
+        Senha->setInputMask(QString());
         label->setText(QApplication::translate("cadastro", "Cadastro", nullptr));
         label_2->setText(QApplication::translate("cadastro", "Nome:", nullptr));
-        label_3->setText(QApplication::translate("cadastro", "Sobrenome:", nullptr));
+        senha_2->setText(QApplication::translate("cadastro", "Senha", nullptr));
         label_4->setText(QApplication::translate("cadastro", "Idade:", nullptr));
         label_5->setText(QApplication::translate("cadastro", "Sexo:", nullptr));
         label_6->setText(QApplication::translate("cadastro", "Cpf:", nullptr));

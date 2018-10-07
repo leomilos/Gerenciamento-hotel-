@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="Nome">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -24,17 +24,20 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="Senha">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>80</y>
       <width>113</width>
       <height>20</height>
      </rect>
     </property>
+    <property name="inputMask">
+     <string/>
+    </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
+   <widget class="QLineEdit" name="Idade">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -44,7 +47,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_4">
+   <widget class="QLineEdit" name="Sexo">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -54,7 +57,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_5">
+   <widget class="QLineEdit" name="Cpf">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -90,7 +93,7 @@
      <string>Nome:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="senha_2">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -100,7 +103,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Sobrenome:</string>
+     <string>Senha</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
