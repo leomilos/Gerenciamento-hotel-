@@ -27,7 +27,9 @@ class LES{
                 return false;
             }
 
-            for(i;i < n && agenda[i].cpf < p.cpf;i++){
+            // agenda[i].cpf < p.cpf evitar o cadastro de dois cpfs iguais
+
+            for(i;i < n ;i++){
             }
 
             agenda[i] = p;
