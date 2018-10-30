@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\cadastro.o
+./release\pessoa.o
+./release\menu.o
+./release\reservaquarto.o
+./release\reservas.o
+./release\reservasdiversas.o
+./release\moc_mainwindow.o
+./release\moc_cadastro.o
+./release\moc_menu.o
+./release\moc_reservaquarto.o
+./release\moc_reservasdiversas.o
+);
