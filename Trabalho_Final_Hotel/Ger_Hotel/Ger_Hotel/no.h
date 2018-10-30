@@ -1,22 +1,28 @@
-#ifndef NO_H
-#define NO_H
-#include "mainwindow.h"
-#include "reservadiversas.h"
-
+#ifndef No_H
+#define No_H
+#include "pessoa.h"
+#include <iostream>
 using namespace std;
+template <typename T>
+class Arvore;
+
+template <typename T>
 class No{
-    private:
-        ReservaDiversas r;
-        No* proximo;
-        No* anterior;
-        No(ReservaDiversas r) : r(r),proximo(nullptr),anterior(nullptr){
+public:
+    Pessoa valor;
+    int altura;
+    No<Pessoa>* pai;
+    No<Pessoa>* esq;
+    No<Pessoa>* dir;
 
-        }
-    public:
-        ~No(){
-        }
-    friend class LDDE;
+public:
+    No(Pessoa valor): valor(valor),altura(0),pai(nullptr),esq(nullptr),dir(nullptr){
 
+    }
+    Pessoa getValor(){
+        return valor;
+    }
+
+    friend class Arvore<Pessoa>;
 };
-
-#endif // NO_H
+#endif

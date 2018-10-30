@@ -16,6 +16,8 @@
 #include "menu.h"
 #include "escreve.h"
 #include "les.h"
+#include "Arvore.h"
+Arvore<Pessoa> c;
 
 
 
@@ -58,33 +60,31 @@ void MainWindow::recebeUsuario(QString nome,QString senha,QString idade,QString 
 
 void MainWindow::on_btnLogar_clicked()
 {
-
-    QString nome = ui->txtNome->text();
+    c.destruidor();
+    leitura();
+    QString CPF = ui->txtNome->text();
     QString senha = ui->txtSenha->text();
     Pessoa a;
-    ifstream arquivo("test.txt");
-    while(arquivo >> a.snome >> a.ssenha >> a.sidade >> a.ssexo >> a.scpf){
-        if(nome.toStdString() == a.snome){
-            if(senha.toStdString() == a.ssenha){
-                QString nome,senha,idade,sexo,cpf;
-                nome = QString::fromStdString(a.snome);
-                senha = QString::fromStdString(a.ssenha);
-                idade = QString::fromStdString(a.sidade);
-                sexo = QString::fromStdString(a.ssexo);
-                cpf = QString::fromStdString(a.scpf);
-                menu *m = new menu(this);
-                m->show();
-                connect(this,SIGNAL(manda(QString,QString,QString,QString,QString)),m,SLOT(recebe(QString,QString,QString,QString,QString)));
-                emit manda(nome,senha,idade,sexo,cpf);
-            }
-        }
+    string cpf = CPF.toStdString();
+    string senha2 = senha.toStdString();
+
+    a=c.buscaCPF(cpf);
+    if(a.getSSenha()==senha2){
+        menu *m = new menu(this);
+        m->show();
+        QString Sexo,idade,nome;
+        nome = QString::fromStdString(a.getSNome());
+        idade = QString::fromStdString(a.getSIdade());
+        Sexo = QString::fromStdString(a.getSSexo());
+        connect(this,SIGNAL(manda(QString,QString,QString,QString,QString)),m,SLOT(recebe(QString,QString,QString,QString,QString)));
+        emit manda(nome,senha,idade,Sexo,CPF);
     }
+
 }
 
 void MainWindow::leitura(){
 
     Pessoa a;
-    LES c;
     ifstream arquivo("test.txt");
         while(arquivo >> a.snome >> a.ssenha >> a.sidade >> a.ssexo >> a.scpf){
                c.insere(a);

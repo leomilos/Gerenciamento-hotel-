@@ -68,7 +68,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 216, 21));
+        menuBar->setGeometry(QRect(0, 0, 216, 26));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -86,7 +86,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         label->setText(QApplication::translate("MainWindow", "Login", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "Nome:", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "CPF:", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "Senha:", nullptr));
         btnLogar->setText(QApplication::translate("MainWindow", "Logar", nullptr));
         btnCadastrar->setText(QApplication::translate("MainWindow", "Cadastrar", nullptr));

@@ -47,7 +47,9 @@ HEADERS += \
     reservadiversas.h \
     fila.h \
     reservasdiversas.h \
-    escreved.h
+    escreved.h \
+    No.h \
+    Arvore.h
 
 FORMS += \
         mainwindow.ui \
