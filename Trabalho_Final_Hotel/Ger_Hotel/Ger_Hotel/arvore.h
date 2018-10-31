@@ -130,11 +130,15 @@ public:
             } else{
                 anterior->dir=novo;
             }
-            anterior->altura=novo->altura+1;
-            while(anterior->pai){
-                anterior->pai->altura=anterior->altura+1;
-                anterior=anterior->pai;
-            }
+            if(anterior->esq== nullptr||anterior->dir== nullptr) {
+                            anterior->altura = novo->altura + 1;
+                            while (anterior->pai) {
+                                if(anterior->pai->altura<=anterior->altura+1) {
+                                    anterior->pai->altura = anterior->altura + 1;
+                                }
+                                anterior = anterior->pai;
+                            }
+                        }
         } else{
             raiz=novo;
         }
@@ -190,7 +194,10 @@ public:
                 atual=atual->dir;
             }
             if(atual==nullptr){
-                break;
+                Pessoa a;
+                a.setSCPF("false");
+                a.setSSenha("false");
+                return a;
             }
         }
 
