@@ -148,6 +148,8 @@ void menu::recebeDiversos(QString tipo){
     ui->listWidget_2->addItem("Senha:");
     ui->listWidget_2->addItem(senha);
     ui->listWidget_2->addItem("______________________");
+
+
 }
 
 void menu::lerDiversos(){
@@ -192,15 +194,14 @@ void menu::recebeExluir(QString quarto,QString dia,QString mes,QString ano){
             les.remove(les.buscar(b.cpf,b.quarto,b.eDia,b.eAno));
         }
     }
-
     escrevePainel();
 
-    //escreveReserva e;
-    //reservas d;
+    escreveReserva e;
+    reservas d;
 
-    //e.limparArquivo2();
+    e.limparArquivo2();
 
-    /*int n2 = les.getTamanho();
+    int n2 = les.getTamanho();
     for(int j=0;j<n2;j++){
         d = les.buscarPessoa(j);
         QString cpf = QString::fromStdString(d.cpf);
@@ -212,7 +213,7 @@ void menu::recebeExluir(QString quarto,QString dia,QString mes,QString ano){
         QString sMes = QString::fromStdString(d.sMes);
         QString sAno = QString::fromStdString(d.sAno);
         e.limparArquivo(cpf,quarto,eDia,eMes,eAno,sDia,sMes,sAno);
-    }*/
+    }
 
 }
 
