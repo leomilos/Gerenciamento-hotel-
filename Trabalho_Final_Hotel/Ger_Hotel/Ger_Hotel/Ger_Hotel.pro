@@ -32,7 +32,8 @@ SOURCES += \
     menu.cpp \
     reservaquarto.cpp \
     reservas.cpp \
-    reservasdiversas.cpp
+    reservasdiversas.cpp \
+    excluireserva.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,15 +49,17 @@ HEADERS += \
     fila.h \
     reservasdiversas.h \
     escreved.h \
-    No.h \
-    Arvore.h
+    arvore.h \
+    no.h \
+    excluireserva.h
 
 FORMS += \
         mainwindow.ui \
     cadastro.ui \
     menu.ui \
     reservaquarto.ui \
-    reservasdiversas.ui
+    reservasdiversas.ui \
+    excluireserva.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -189,7 +189,7 @@
       <x>260</x>
       <y>30</y>
       <width>191</width>
-      <height>431</height>
+      <height>391</height>
      </rect>
     </property>
    </widget>
@@ -240,6 +240,19 @@
     </property>
     <property name="text">
      <string>Reservas Diversas:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnExlcuir">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>430</y>
+      <width>191</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Remover Reserva</string>
     </property>
    </widget>
   </widget>

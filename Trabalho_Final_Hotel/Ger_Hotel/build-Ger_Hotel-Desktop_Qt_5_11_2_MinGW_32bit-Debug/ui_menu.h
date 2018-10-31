@@ -43,6 +43,7 @@ public:
     QListWidget *listWidget_2;
     QLabel *label_7;
     QLabel *label_8;
+    QPushButton *btnExlcuir;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -94,7 +95,7 @@ public:
         txtCpf->setGeometry(QRect(110, 160, 141, 16));
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(260, 30, 191, 431));
+        listWidget->setGeometry(QRect(260, 30, 191, 391));
         btnSair = new QPushButton(centralwidget);
         btnSair->setObjectName(QStringLiteral("btnSair"));
         btnSair->setGeometry(QRect(10, 10, 75, 23));
@@ -107,6 +108,9 @@ public:
         label_8 = new QLabel(centralwidget);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(460, 10, 101, 16));
+        btnExlcuir = new QPushButton(centralwidget);
+        btnExlcuir->setObjectName(QStringLiteral("btnExlcuir"));
+        btnExlcuir->setGeometry(QRect(260, 430, 191, 23));
         menu->setCentralWidget(centralwidget);
         menubar = new QMenuBar(menu);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -140,6 +144,7 @@ public:
         btnSair->setText(QApplication::translate("menu", "Logout ", nullptr));
         label_7->setText(QApplication::translate("menu", "Quartos Reservados:", nullptr));
         label_8->setText(QApplication::translate("menu", "Reservas Diversas:", nullptr));
+        btnExlcuir->setText(QApplication::translate("menu", "Remover Reserva", nullptr));
     } // retranslateUi
 
 };

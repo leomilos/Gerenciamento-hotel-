@@ -16,10 +16,8 @@
 #include "menu.h"
 #include "escreve.h"
 #include "les.h"
-#include "Arvore.h"
+#include "arvore.h"
 Arvore<Pessoa> c;
-
-
 
 using namespace std;
 

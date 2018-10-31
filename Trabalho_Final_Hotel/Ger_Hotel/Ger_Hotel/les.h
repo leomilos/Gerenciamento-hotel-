@@ -53,33 +53,30 @@ private:
          return r[i];
      }
 
-     bool buscar(string valor){
-         int i = 0;
-         while(i != n && agenda[i].getSCPF()!= valor){
-             i++;
+     int buscar(string cpf,string quarto,string dia,string mes){
+         int i;
+         for(i = 0;i<n;i++){
+             if(r[i].cpf == cpf && r[i].quarto == quarto && r[i].eDia == dia && r[i].eMes == mes){
+                 return i;
+             }
          }
-         if(i == n){
-             return false;
-         }
-         else{
-             return i;
-         }
+         return -1;
      }
 
      bool removeReserva(){
          m=0;
      }
 
-     bool remove(string valor){
+     bool remove(string cpf,string quarto,string dia,string mes){
 
-         int a = this->buscar(valor);
+         int a = this->buscar(cpf,quarto,dia,mes);
          if(a == n){
              return false;
          }
          else{
              int i;
-                 for(i = a; i < n; i++){
-                     agenda[i] = agenda[i + 1];
+                 for(i = j; i < n; i++){
+                     r[i] = r[i + 1];
                  }
                  n--;
                  return true;

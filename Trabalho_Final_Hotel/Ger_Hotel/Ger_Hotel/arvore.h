@@ -1,10 +1,10 @@
-#ifndef Arvore_H
-#define Arvore_H
+#ifndef ARVORE_H
+#define ARVORE_H
 #include <iostream>
 #include <queue>
 #define  MAX(a,b) (((a>b)) ? (a) : (b))
 using namespace std;
-#include "No.h"
+#include "no.h"
 template <typename T>
 #include "pessoa.h"
 class Arvore{

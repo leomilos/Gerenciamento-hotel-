@@ -7,9 +7,11 @@ INPUT(
 ./release\reservaquarto.o
 ./release\reservas.o
 ./release\reservasdiversas.o
+./release\excluireserva.o
 ./release\moc_mainwindow.o
 ./release\moc_cadastro.o
 ./release\moc_menu.o
 ./release\moc_reservaquarto.o
 ./release\moc_reservasdiversas.o
+./release\moc_excluireserva.o
 );

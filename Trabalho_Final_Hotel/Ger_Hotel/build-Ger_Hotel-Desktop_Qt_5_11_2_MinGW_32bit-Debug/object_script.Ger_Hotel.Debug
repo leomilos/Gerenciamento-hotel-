@@ -7,9 +7,11 @@ INPUT(
 ./debug\reservaquarto.o
 ./debug\reservas.o
 ./debug\reservasdiversas.o
+./debug\excluireserva.o
 ./debug\moc_mainwindow.o
 ./debug\moc_cadastro.o
 ./debug\moc_menu.o
 ./debug\moc_reservaquarto.o
 ./debug\moc_reservasdiversas.o
+./debug\moc_excluireserva.o
 );

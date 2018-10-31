@@ -8,6 +8,7 @@
 #include "escreved.h"
 #include "les.h"
 #include "fila.h"
+#include "excluireserva.h"
 
 LES les;
 Fila fila;
@@ -64,6 +65,7 @@ void menu::recebeReserva(QString quarto,QString eDia,QString eMes,QString eAno,Q
     ui->listWidget->addItem(eDia+"/"+eMes+"/"+eAno);
     ui->listWidget->addItem("Saida:");
     ui->listWidget->addItem(sDia+"/"+sMes+"/"+sAno);
+    ui->listWidget_2->addItem("______________________");
 
 
 }
@@ -156,6 +158,8 @@ void menu::lerDiversos(){
     }
 }
 
+
+
 void menu::escreveDiversosPainel(){
 
     reservaD b;
@@ -174,3 +178,30 @@ void menu::escreveDiversosPainel(){
     }
 }
 
+//funcao para exlcuir reserva
+
+void menu::recebeExluir(QString quarto,QString dia,QString mes,QString ano){
+
+    reservas b;
+    int n = les.getTamanho();
+    for(int i=0;i<n;i++){
+        b=les.buscarPessoa(i);
+        if(b.cpf == ui->txtCpf->text().toStdString() && b.quarto == quarto.toStdString() && b.eDia == dia.toStdString() && b.eMes == mes.toStdString() && b.eAno == ano.toStdString()){
+            les.remove(b.cpf,b.quarto,b.eDia,b.eMes);
+        }
+    }
+    ui->listWidget->clear();
+    escrevePainel();
+}
+
+
+
+
+void menu::on_btnExlcuir_clicked()
+{
+
+    excluireserva *ex = new excluireserva(this);
+    ex->show();
+    connect(ex,SIGNAL(mandaExcluir(QString,QString,QString,QString)),this,SLOT(recebeExluir(QString,QString,QString,QString)));
+
+}

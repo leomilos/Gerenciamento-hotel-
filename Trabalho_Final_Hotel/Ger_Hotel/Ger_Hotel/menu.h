@@ -31,12 +31,16 @@ private:
     Ui::menu *ui;
 
 private slots:
+
     void on_btnReservar_clicked();
     void recebe(QString,QString,QString,QString,QString);
     void recebeReserva(QString,QString,QString,QString,QString,QString,QString);
     void on_btnSair_clicked();
     void recebeDiversos(QString);
     void on_btnReservaDiversos_clicked();
+    void on_btnExlcuir_clicked();
+    void recebeExluir(QString,QString,QString,QString);
+
 };
 
 #endif // MENU_H

@@ -1,5 +1,5 @@
-#ifndef No_H
-#define No_H
+#ifndef N0_H
+#define NO_H
 #include "pessoa.h"
 #include <iostream>
 using namespace std;
