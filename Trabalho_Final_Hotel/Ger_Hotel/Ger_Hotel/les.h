@@ -19,7 +19,7 @@ private:
  public:
 
      int n;
-     int m;
+     int m =0;
      Pessoa agenda[100];
      reservas r[100];
 
@@ -55,7 +55,7 @@ private:
 
      int buscar(string cpf,string quarto,string dia,string mes){
          int i;
-         for(i = 0;i<n;i++){
+         for(i = 0;i<m;i++){
              if(r[i].cpf == cpf && r[i].quarto == quarto && r[i].eDia == dia && r[i].eMes == mes){
                  return i;
              }
@@ -67,20 +67,18 @@ private:
          m=0;
      }
 
-     bool remove(string cpf,string quarto,string dia,string mes){
 
-         int a = this->buscar(cpf,quarto,dia,mes);
-         if(a == n){
-             return false;
+     bool remove(int index){
+
+         if (index < 0 || index >= m){
+            return false;
          }
-         else{
-             int i;
-                 for(i = j; i < n; i++){
-                     r[i] = r[i + 1];
-                 }
-                 n--;
-                 return true;
-             }
+
+         for(int i=index; i<m-1; i++){
+             r[i] = r[i+1];
+         }
+         m--;
+         return  true;
      }
 };
 

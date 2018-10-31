@@ -9,6 +9,7 @@
 #include "les.h"
 #include "fila.h"
 #include "excluireserva.h"
+#include "escreve.h"
 
 LES les;
 Fila fila;
@@ -17,9 +18,10 @@ menu::menu(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::menu)
 {
-    ui->setupUi(this);;
+    ui->setupUi(this);
     lerPainelQuarto();
     lerDiversos();
+
 }
 
 menu::~menu()
@@ -65,7 +67,7 @@ void menu::recebeReserva(QString quarto,QString eDia,QString eMes,QString eAno,Q
     ui->listWidget->addItem(eDia+"/"+eMes+"/"+eAno);
     ui->listWidget->addItem("Saida:");
     ui->listWidget->addItem(sDia+"/"+sMes+"/"+sAno);
-    ui->listWidget_2->addItem("______________________");
+    ui->listWidget->addItem("______________________");
 
 
 }
@@ -108,6 +110,7 @@ void menu::escrevePainel(){
 
 void menu::on_btnSair_clicked()
 {
+    ui->listWidget->clear();
     les.removeReserva();
     fila.removerFila();
     close();
@@ -182,19 +185,37 @@ void menu::escreveDiversosPainel(){
 
 void menu::recebeExluir(QString quarto,QString dia,QString mes,QString ano){
 
+    ui->listWidget->clear();
     reservas b;
     int n = les.getTamanho();
     for(int i=0;i<n;i++){
         b=les.buscarPessoa(i);
-        if(b.cpf == ui->txtCpf->text().toStdString() && b.quarto == quarto.toStdString() && b.eDia == dia.toStdString() && b.eMes == mes.toStdString() && b.eAno == ano.toStdString()){
-            les.remove(b.cpf,b.quarto,b.eDia,b.eMes);
+        if(b.cpf == ui->txtCpf->text().toStdString() && b.quarto == quarto.toStdString() && b.eDia == dia.toStdString() && b.eMes == mes.toStdString()){
+            les.remove(les.buscar(b.cpf,b.quarto,b.eDia,b.eAno));
         }
     }
-    ui->listWidget->clear();
     escrevePainel();
+
+    escreveReserva e;
+    reservas d;
+
+    e.limparArquivo2();
+
+    int n2 = les.getTamanho();
+    for(int j=0;j<n2;j++){
+        d = les.buscarPessoa(j);
+        QString cpf = QString::fromStdString(d.cpf);
+        QString quarto = QString::fromStdString(d.quarto);
+        QString eDia = QString::fromStdString(d.eDia);
+        QString eMes = QString::fromStdString(d.eMes);
+        QString eAno = QString::fromStdString(d.eAno);
+        QString sDia = QString::fromStdString(d.sDia);
+        QString sMes = QString::fromStdString(d.sMes);
+        QString sAno = QString::fromStdString(d.sAno);
+        e.limparArquivo(cpf,quarto,eDia,eMes,eAno,sDia,sMes,sAno);
+    }
+
 }
-
-
 
 
 void menu::on_btnExlcuir_clicked()

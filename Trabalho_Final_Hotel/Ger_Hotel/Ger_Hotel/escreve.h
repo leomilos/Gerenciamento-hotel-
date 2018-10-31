@@ -19,6 +19,10 @@ class escreve {
             arquivo << a << "\r";
             arquivo.close();
         }
+        void limparArquivo(){
+            arquivo.open("teste.txt");
+            arquivo << "";
+        }
 
 };
 

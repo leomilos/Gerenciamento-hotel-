@@ -44,6 +44,7 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QPushButton *btnExlcuir;
+    QLabel *txtTest;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -111,6 +112,9 @@ public:
         btnExlcuir = new QPushButton(centralwidget);
         btnExlcuir->setObjectName(QStringLiteral("btnExlcuir"));
         btnExlcuir->setGeometry(QRect(260, 430, 191, 23));
+        txtTest = new QLabel(centralwidget);
+        txtTest->setObjectName(QStringLiteral("txtTest"));
+        txtTest->setGeometry(QRect(60, 290, 47, 13));
         menu->setCentralWidget(centralwidget);
         menubar = new QMenuBar(menu);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -145,6 +149,7 @@ public:
         label_7->setText(QApplication::translate("menu", "Quartos Reservados:", nullptr));
         label_8->setText(QApplication::translate("menu", "Reservas Diversas:", nullptr));
         btnExlcuir->setText(QApplication::translate("menu", "Remover Reserva", nullptr));
+        txtTest->setText(QApplication::translate("menu", "teste", nullptr));
     } // retranslateUi
 
 };
